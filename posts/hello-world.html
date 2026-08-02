@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello World — Phennova</title>
+  <meta name="description" content="Why I finally set this thing up, and what I intend to put on it.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>✎</text></svg>">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="masthead">
+      <h1><a href="../index.html">Phennova</a></h1>
+      <nav>
+        <a href="../index.html">Writing</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <header>
+          <time datetime="2026-08-02">August 2, 2026</time>
+          <h1>Hello World</h1>
+        </header>
+
+        <p>
+          I've been meaning to set up a place to write for a while, and the friction
+          was always the same: picking a platform, learning its conventions, and then
+          discovering it wanted me to write in its editor rather than mine. So this is
+          about as simple as it gets — plain HTML files in a folder, served by GitHub
+          Pages. No build step, nothing to keep updated, nothing to break.
+        </p>
+
+        <p>
+          The plan is to use this mostly as a notebook. Things I've built, problems that
+          took longer to solve than they should have, and the occasional longer piece
+          when something is worth thinking through properly.
+        </p>
+
+        <h2>How this works</h2>
+
+        <p>
+          Every post is a standalone file in <code>posts/</code>. To publish one I copy
+          <code>posts/_template.html</code>, write into it, add a line to the index, and
+          push. That's the whole workflow:
+        </p>
+
+        <pre><code>git add .
+git commit -m "New post"
+git push</code></pre>
+
+        <p>
+          Thirty seconds later it's live. If it turns out I want tags, or an archive
+          page, or syntax highlighting, I can add them later — but I'd rather start with
+          the smallest thing that works than build scaffolding for posts I haven't
+          written yet.
+        </p>
+
+        <blockquote>
+          <p>
+            The best time to plant a tree was twenty years ago. The second best time is
+            now.
+          </p>
+        </blockquote>
+
+        <p>
+          More soon.
+        </p>
+      </article>
+
+      <footer class="post-footer">
+        <a href="../index.html">&larr; All writing</a>
+      </footer>
+    </main>
+
+  </div>
+</body>
+</html>

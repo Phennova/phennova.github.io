@@ -35,10 +35,22 @@
           been reading about; occasionally something longer.
         </p>
 
+        <h2>Get in touch</h2>
+
+        <p>
+          Email is the best way to reach me:
+          <!-- The address is assembled by the script at the bottom of this page
+               so it isn't sitting in the HTML as plain text for scrapers. -->
+          <a id="email" href="#" data-user="saliascloak1" data-domain="gmail.com">saliascloak1 at gmail dot com</a>.
+        </p>
+
+        <p>
+          I read everything, though I don't always reply quickly.
+        </p>
+
         <h2>Elsewhere</h2>
         <ul>
           <li><a href="https://github.com/Phennova">GitHub</a></li>
-          <li><a href="mailto:saliascloak1@gmail.com">Email</a></li>
           <!-- Add or remove links as you like. -->
         </ul>
       </article>
@@ -49,5 +61,18 @@
     </footer>
 
   </div>
+
+  <script>
+    // Reassemble the email address at runtime and make it clickable.
+    // Without JS the link still reads "name at domain dot com", which a person
+    // can act on but a naive address-harvesting regex won't match.
+    (function () {
+      var el = document.getElementById('email');
+      if (!el) return;
+      var address = el.dataset.user + String.fromCharCode(64) + el.dataset.domain;
+      el.href = 'mailto:' + address;
+      el.textContent = address;
+    })();
+  </script>
 </body>
 </html>

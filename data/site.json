@@ -1,0 +1,248 @@
+{
+  "name": "Phennova",
+  "tagline": "I build games, tools and experiments.",
+  "bio": "Security, local AI and whatever else seems like fun. Most of what's here was built with Claude's help; there's a page about that.",
+  "layout": "list",
+  "ai": {
+    "title": "Built with AI",
+    "body": "I use AI heavily in my projects, and I want that to be clear. Claude, made by Anthropic, has been a huge help in turning my ideas into working software.\n\nHow it works in practice: I come up with the idea, decide what it should do and how it should feel, and make the calls when there's a trade-off. Claude helps me plan it, write the code, run the tests and chase down bugs. I check what it produces, play and test it myself, and steer it when it's wrong, which happens.\n\nI have plenty of ideas and not much time. Working this way, more of them get built and finished. The projects here are mine in direction and judgment, and each one says where AI helped. Where I've built on other people's work, as with the Touch Bar driver, I credit them too.\n\nIf you're curious how I do it, ask me."
+  },
+  "projects": [
+    {
+      "id": "neurodish",
+      "title": "neurodish",
+      "date": "2026-06-22",
+      "source": "closed",
+      "status": "Research prototype, closed source.",
+      "summary": "A spiking neural network that learns to play Pong, with no backprop.",
+      "description": "I wanted to see what happens when you simulate neurons the way real ones work: discrete spikes in time, conductance-based synapses, and learning by spike-timing plasticity (STDP) instead of backpropagation. It's inspired by the DishBrain experiment, where living neurons learned to play Pong.\n\nBuilt on Brian2, it starts with a network that sits quietly and grows into one that learns sequences (show it A, B, C and the forward connections strengthen while the backward ones fade) and then plays Pong. With 2,400 neurons it returns the ball about 80% of the time after training (53 of 66 in my tests), against about 4.5% untrained. Smaller networks do much worse, which fits why DishBrain used far more cells.\n\nIt's not the fully unsupervised learning the real experiment used. Mine uses a supervised-Hebbian setup, and some results vary from run to run.",
+      "ai": "Claude helped with the design doc, the Brian2 code and the experiments. I chose the idea and what to test, and kept the results honest.",
+      "tags": [
+        "python",
+        "neuroscience",
+        "brian2",
+        "simulation"
+      ],
+      "image": "images/neurodish-pong.gif",
+      "link": "",
+      "timeline": [
+        {
+          "id": "neu0",
+          "date": "2026-06-04",
+          "type": "update",
+          "text": "Design doc for a biologically faithful spiking substrate."
+        },
+        {
+          "id": "neu1",
+          "date": "2026-06-22",
+          "type": "milestone",
+          "text": "A 2,400-neuron network learns Pong."
+        }
+      ]
+    },
+    {
+      "id": "vapour-front",
+      "title": "Vapour Front",
+      "date": "2026-10-19",
+      "source": "closed",
+      "status": "In development. Closed source; I plan to sell it. A limited demo is planned.",
+      "summary": "A top-down multiplayer air war: two teams, one map, and an AI ground war underneath.",
+      "description": "Two teams fly fighters, bombers and attack helicopters over one large map. Teams drain each other's tickets by destroying bases, shooting down recon planes and killing convoys, and by dogfighting each other. Underneath, AI convoys fight their own ground war along the roads, and tipping that battle is another way to win.\n\nIt's built in Godot 4 with a server-authoritative dedicated server (which I run on a Raspberry Pi), player accounts, bots, a game-mode framework and automated tests. I've been building it in phases since late August, with playtest rounds along the way.",
+      "ai": "This is my biggest AI-assisted project. I wrote the game design and approve every phase; Claude does most of the implementation, tests and playtest write-ups.",
+      "tags": [
+        "godot",
+        "multiplayer",
+        "game",
+        "gdscript"
+      ],
+      "image": "",
+      "link": "",
+      "timeline": [
+        {
+          "id": "vap0",
+          "date": "2026-08-27",
+          "type": "milestone",
+          "text": "Design spec approved."
+        },
+        {
+          "id": "vap1",
+          "date": "2026-10-19",
+          "type": "update",
+          "text": "Game-mode framework and team deathmatch."
+        }
+      ]
+    },
+    {
+      "id": "forge",
+      "title": "FORGE",
+      "date": "2026-03-11",
+      "source": "closed",
+      "status": "Prototype from March. Paused. Closed source.",
+      "summary": "A fully local, private, multi-agent coding system that runs on open models.",
+      "description": "FORGE takes one message and runs it through a hierarchy of local agents: intake, three parallel planners, three adversarial auditors, a manager, specialised workers and a reviewer. It runs on open models through Ollama, with no API costs.\n\nAlongside it I wrote GardWire, a small typed coordination language for the agents, with its own lexer, parser, type checker and virtual machine.\n\nI paused it in March and want to pick it back up.",
+      "ai": "I designed the architecture, and Claude Code built most of the implementation, with tests.",
+      "tags": [
+        "typescript",
+        "local-ai",
+        "ollama",
+        "agents"
+      ],
+      "image": "",
+      "link": "",
+      "timeline": [
+        {
+          "id": "for0",
+          "date": "2026-03-08",
+          "type": "update",
+          "text": "Started FORGE and GardWire."
+        },
+        {
+          "id": "for1",
+          "date": "2026-03-11",
+          "type": "milestone",
+          "text": "Planned the intake and reviewer phase, then paused."
+        }
+      ]
+    },
+    {
+      "id": "bcm43602",
+      "title": "Why Apple's BCM43602 Wi-Fi firmware can't be used on Linux",
+      "date": "2026-09-02",
+      "source": "open",
+      "status": "Finished write-up.",
+      "summary": "A negative result, with the evidence, so nobody else spends a weekend on it.",
+      "description": "On a 2016 MacBook Pro, Linux's brcmfmac driver connects to Wi-Fi but only works within about a metre of the router. It's tempting to extract Apple's firmware, as the t2linux project does for T2 Macs. I tried it and wrote down why it doesn't work: Apple's driver for this chip is a BMAC (split-MAC) design, while brcmfmac only supports FullMAC. I checked both macOS Mojave and Monterey and found them identical, so the architecture didn't change between 2018 and 2021.",
+      "ai": "Claude helped with the extraction work and the write-up. I ran it on the real machine and checked the findings.",
+      "tags": [
+        "linux",
+        "reverse-engineering",
+        "wifi",
+        "macbook"
+      ],
+      "image": "",
+      "link": "https://github.com/Phennova/bcm43602-linux-wifi",
+      "timeline": [
+        {
+          "id": "bcm0",
+          "date": "2026-09-02",
+          "type": "milestone",
+          "text": "Wrote up why the firmware can't be extracted."
+        }
+      ]
+    },
+    {
+      "id": "touchbar",
+      "title": "Touch Bar driver for T1 MacBook Pros",
+      "date": "2026-09-08",
+      "source": "open",
+      "status": "Works on my 2016 15\" MacBook Pro running Arch Linux.",
+      "summary": "Function keys, brightness and the ambient light sensor on the 2016-2017 Touch Bar MacBooks.",
+      "description": "A Linux kernel driver with DKMS and systemd packaging, so the Touch Bar works on T1 MacBook Pros. The core driver comes from earlier work by Ronald Tschalar, Heratiki, AdityaGarg8 and the t2linux community, and I credit them in the repo. My contribution is getting it working on current kernels, the installer and the documentation. Tested on kernels 6.19 and 6.18 LTS on one machine; other T1 models should work but I haven't tested them.",
+      "ai": "Claude wrote the installation tooling, the config and the changes to the driver code with me, and the repo says so.",
+      "tags": [
+        "linux",
+        "kernel",
+        "c",
+        "macbook"
+      ],
+      "image": "",
+      "link": "https://github.com/Phennova/apple-touchbar-driver",
+      "timeline": [
+        {
+          "id": "tou0",
+          "date": "2026-04-13",
+          "type": "milestone",
+          "text": "First commit: Touch Bar working on Arch Linux."
+        },
+        {
+          "id": "tou1",
+          "date": "2026-09-08",
+          "type": "update",
+          "text": "Updated for newer kernels."
+        }
+      ]
+    },
+    {
+      "id": "finder",
+      "title": "finder",
+      "date": "2026-05-26",
+      "source": "open",
+      "status": "Open source (MIT). A rebuilt version is in progress, closed.",
+      "summary": "A privacy-conscious OSINT tool for the terminal.",
+      "description": "Give it a username, email, name, IP, MAC or domain and it pivots between DNS records, certificate transparency logs, RDAP, geolocation, passive DNS, social sites and more, following each result into new queries to a depth you choose. It can send everything through Tor or a SOCKS proxy so your own address isn't exposed. Built with Textual.",
+      "ai": "Claude helped build it, including correctness fixes and tests.",
+      "tags": [
+        "python",
+        "osint",
+        "security",
+        "tui"
+      ],
+      "image": "",
+      "link": "https://github.com/Phennova/finder",
+      "timeline": [
+        {
+          "id": "fin0",
+          "date": "2026-05-19",
+          "type": "milestone",
+          "text": "First commit."
+        },
+        {
+          "id": "fin1",
+          "date": "2026-05-26",
+          "type": "update",
+          "text": "Correctness fixes."
+        }
+      ]
+    },
+    {
+      "id": "rulebound",
+      "title": "Rulebound",
+      "date": "2026-10-26",
+      "source": "closed",
+      "status": "v0.2.0 released. Not yet tested in a real client.",
+      "summary": "A Minecraft mod that turns \"beat the game, but...\" challenges into a real game mode.",
+      "description": "Pick a rule pack, start a run, and break a rule and the run is over. Packs include banned colours (touch anything green and it's over), the Ten Commandments, and faith and diet rules such as vegan, kosher, halal and Jain. It's a NeoForge mod for Minecraft 26.3, with shared-world races between players.",
+      "ai": "A background AI worker built most of it from my plan in a series of milestones. I made the design decisions, like how to map the Commandments to game rules, and I check its work.",
+      "tags": [
+        "minecraft",
+        "neoforge",
+        "java"
+      ],
+      "image": "",
+      "link": "",
+      "timeline": [
+        {
+          "id": "rul0",
+          "date": "2026-10-26",
+          "type": "milestone",
+          "text": "v0.2.0 released with 38 rule packs."
+        }
+      ]
+    },
+    {
+      "id": "daily-builds",
+      "title": "Daily Builds",
+      "date": "2026-10-27",
+      "source": "open",
+      "status": "Running. A new build every night.",
+      "summary": "One new game or tool, built by an AI agent, every day.",
+      "description": "Every night an agent researches an idea, builds it, tests it and publishes it. Each build is a small web game or tool that runs in a browser on a phone, with no dependencies. The first was a carrier-landing game where you fly the last 18 seconds of an F/A-18 approach.",
+      "ai": "This one is AI by design. I set the rules and the quality bar, and the agent does the work.",
+      "tags": [
+        "games",
+        "tools",
+        "automation"
+      ],
+      "image": "",
+      "link": "https://github.com/Phennova/daily-builds",
+      "timeline": [
+        {
+          "id": "dai0",
+          "date": "2026-10-27",
+          "type": "milestone",
+          "text": "First build: Call the Ball."
+        }
+      ]
+    }
+  ]
+}

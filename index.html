@@ -1,49 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Phennova</title>
-  <meta name="description" content="Writing about software, tools, and whatever else holds my attention.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>✎</text></svg>">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Phennova</title>
+<meta name="description" content="Phennova: personal projects and timeline.">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-  <div class="wrap">
-
-    <header class="masthead">
-      <h1><a href="index.html">Phennova</a></h1>
-      <p class="tagline">Writing about software, tools, and whatever else holds my attention.</p>
-      <nav>
-        <a href="index.html" aria-current="page">Writing</a>
-        <a href="about.html">About</a>
-      </nav>
-    </header>
-
-    <main>
-      <ul class="posts">
-
-        <li>
-          <time datetime="2026-08-02">August 2, 2026</time>
-          <h2><a href="posts/team-cards.html">Team Cards Minecraft Mod</a></h2>
-          <p>Development of a custom Minecraft Mod and how it works.</p>
-        </li>
-
-        <li>
-          <time datetime="2026-08-03">August 3, 2026</time>
-          <h2><a href="posts/envenom.html">Envenom Minecraft Mod</a></h2>
-          <p>Development of my second Minecraft mod.</p>
-        </li>
-
-        <!-- Add new posts here, newest at the top. Copy the block above. -->
-
-      </ul>
-    </main>
-
-    <footer class="site-footer">
-      <p>&copy; 2026 Phennova</p>
-    </footer>
-
-  </div>
+<header class="top">
+  <a class="brand" href="#/">Phennova</a>
+  <nav><a href="#/" data-nav="home">Projects</a><a href="#/timeline" data-nav="timeline">Timeline</a><a href="#/ai" data-nav="ai">Built with AI</a>
+  <button id="lockBtn" class="ghost" title="Edit mode">Edit</button></nav>
+</header>
+<div id="editbar" hidden></div>
+<main id="app"></main>
+<footer><span id="status"></span><span>&copy; Phennova</span></footer>
+<dialog id="dlg"></dialog>
+<script src="app.js?v=4"></script>
 </body>
 </html>

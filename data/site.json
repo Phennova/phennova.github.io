@@ -69,6 +69,12 @@
           "date": "2026-10-19",
           "type": "update",
           "text": "Game-mode framework and team deathmatch."
+        },
+        {
+          "id": "vf20261102a",
+          "date": "2026-11-02",
+          "type": "update",
+          "text": "Playtest fixes for team deathmatch: teams now start at opposite ends of the map, the 10-second countdown and ready-up are cleaner, and sounds and guns stop when a round freezes. Early work has started on a free-for-all mode."
         }
       ]
     },

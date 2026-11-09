@@ -75,6 +75,12 @@
           "date": "2026-11-02",
           "type": "update",
           "text": "Playtest fixes for team deathmatch: teams now start at opposite ends of the map, the 10-second countdown and ready-up are cleaner, and sounds and guns stop when a round freezes. Early work has started on a free-for-all mode."
+        },
+        {
+          "id": "vf20261109a",
+          "date": "2026-11-09",
+          "type": "update",
+          "text": "Work on a new roguelite-style mode is moving along: you earn XP and level up, pick upgrade cards between fights, and can now use abilities like Afterburner and Combat Flaps, with their own effects, sounds and on-screen cooldowns. Still in testing."
         }
       ]
     },

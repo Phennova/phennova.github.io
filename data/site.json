@@ -81,6 +81,12 @@
           "date": "2026-11-09",
           "type": "update",
           "text": "Work on a new roguelite-style mode is moving along: you earn XP and level up, pick upgrade cards between fights, and can now use abilities like Afterburner and Combat Flaps, with their own effects, sounds and on-screen cooldowns. Still in testing."
+        },
+        {
+          "id": "vf20261120a",
+          "date": "2026-11-20",
+          "type": "update",
+          "text": "More work on the roguelite mode: bots now use their abilities, seeking rounds curve toward their target, and I added a laser weapon with its own beam and sound. Legendary upgrade cards now show up later in a match. Still tuning the balance."
         }
       ]
     },
